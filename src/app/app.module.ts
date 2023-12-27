@@ -9,6 +9,8 @@ import { UsersComponent } from './shared/components/users/users.component';
 import { DashbordComponent } from './shared/components/dashbord/dashbord.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { UserComponent } from './shared/components/users/user/user.component';
+import { ProductComponent } from './shared/components/products/product/product.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
     UsersComponent,
     DashbordComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
