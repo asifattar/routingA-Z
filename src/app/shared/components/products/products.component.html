@@ -1,1 +1,24 @@
-<p>products works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li
+            [ngClass]="{ active : prod.id === selectedProd.id}"
+            class="list-group-item" *ngFor="let prod of pData" >
+                {{prod.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <app-product></app-product>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center ">
+        <button (click)="gotoDashborad()" class="btn mx-3 btn-primary">
+            GO TO DASHBOARD
+        </button>
+        <button class="btn btn-primary" (click)="gotoUsers()">
+            GO TO USERS
+        </button>
+    </div>
+</div>

@@ -204,4 +204,12 @@ export class ProductsService {
    
 
   constructor() { }
+
+
+  getallProduct(){
+    return this.mobiles
+  }
+
+
+
 }
