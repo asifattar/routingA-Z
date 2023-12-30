@@ -4,6 +4,7 @@ import { DashbordComponent } from './shared/components/dashbord/dashbord.compone
 import { ProductsComponent } from './shared/components/products/products.component';
 import { UsersComponent } from './shared/components/users/users.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { ProductComponent } from './shared/components/products/product/product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'products', component: ProductsComponent
+  },
+  {
+    path: 'products/:id', component: ProductComponent
   },
   {
     path: 'users', component: UsersComponent

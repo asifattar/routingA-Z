@@ -210,6 +210,9 @@ export class ProductsService {
     return this.mobiles
   }
 
+  getSelectedProd (id : number){
+    return this.mobiles.find( prod => prod.id === id)
+  }
 
 
 }

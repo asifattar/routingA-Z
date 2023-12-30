@@ -2,6 +2,7 @@
     <div class="col-md-4">
         <ul class="list-group">
             <li
+            [routerLink]="['/products', prod.id]"
             [ngClass]="{ active : prod.id === selectedProd.id}"
             class="list-group-item" *ngFor="let prod of pData" >
                 {{prod.name}}
@@ -9,7 +10,7 @@
         </ul>
     </div>
     <div class="col-md-8">
-        <app-product></app-product>
+        <!-- <app-product></app-product> -->
     </div>
 </div>
 <div class="row">
