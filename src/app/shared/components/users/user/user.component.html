@@ -2,13 +2,13 @@
     <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-header ">
-                <h1 class="text-center m-0" >1</h1>
+                <h1 class="text-center m-0" >{{selectedUser.id}}</h1>
             </div>
             <div class="card-body text-capitalize" >
-                <p class="m-0">firstName :- jone</p>
-                <p class="m-0">lastName :- doe</p>
-                <p class="m-0">DOB :- 12-12-1998</p>
-                <p class="m-0">nativePlace :- usa</p>
+                <p class="m-0">firstName :- {{selectedUser.firstName}}</p>
+                <p class="m-0">lastName :- {{selectedUser.lastName}}</p>
+                <p class="m-0">DOB :- {{selectedUser.dateOfBirth}}</p>
+                <p class="m-0">nativePlace :- {{selectedUser.nativePlace}}</p>
             </div>
             <div class="card-footer text-right">
                 <button class="btn btn-primary mx-2">edit</button>

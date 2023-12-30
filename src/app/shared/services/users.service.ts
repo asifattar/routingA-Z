@@ -5,6 +5,7 @@ import { iusers } from '../interface/iusers';
   providedIn: 'root'
 })
 export class UsersService {
+ 
 
    usersArray : iusers[] = [
     {
@@ -94,5 +95,9 @@ export class UsersService {
 
   getAllusers() : Array<iusers>{
     return this.usersArray
+  }
+
+  getSelectedUser(seletedUserId: number) {
+    return this.usersArray.find(per => per.id === seletedUserId)
   }
 }

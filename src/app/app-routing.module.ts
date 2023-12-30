@@ -5,6 +5,7 @@ import { ProductsComponent } from './shared/components/products/products.compone
 import { UsersComponent } from './shared/components/users/users.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { ProductComponent } from './shared/components/products/product/product.component';
+import { UserComponent } from './shared/components/users/user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'users', component: UsersComponent
+  },
+  {
+    path: 'users/:id', component: UserComponent
   },
   {
     path: '**', component: PageNotFoundComponent
