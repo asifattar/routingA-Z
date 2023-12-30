@@ -28,7 +28,6 @@ export class UsersComponent implements OnInit {
   }
   gotoProducts() {
     this._router.navigate(['products'])
-  throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {
