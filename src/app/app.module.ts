@@ -11,6 +11,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductComponent } from './shared/components/products/product/product.component';
+import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ProductComponent } from './shared/components/products/product/product.c
     FooterComponent,
     PageNotFoundComponent,
     UserComponent,
-    ProductComponent
+    ProductComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
