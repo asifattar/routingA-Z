@@ -18,6 +18,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedProdId = +this._route.snapshot.params['id']
+    // this.selectedProdId = this._route.params.subscribe(res => {
+    //   res
+    // })
     this.prodObj = this._productService.getSelectedProd(this.selectedProdId)!
     console.log(this.prodObj);
     

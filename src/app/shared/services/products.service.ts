@@ -6,6 +6,7 @@ import { iproduct } from '../interface/iproduct';
 })
 export class ProductsService {
 
+
   mobiles: iproduct[] = [
     {
       id: 1,
@@ -24,8 +25,8 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg',
       isAvailable: true,
-      canReturn : 1
-      
+      canReturn: 1
+
     },
     {
       id: 2,
@@ -44,8 +45,8 @@ export class ProductsService {
       },
       imageUrl:
         'https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s21-ultra-5g-.jpg',
-        isAvailable: true,
-      canReturn : 0
+      isAvailable: true,
+      canReturn: 0
     },
     {
       id: 3,
@@ -64,7 +65,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/google-pixel-6a.jpg',
       isAvailable: true,
-      canReturn : 1
+      canReturn: 1
     },
     {
       id: 4,
@@ -83,7 +84,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/oneplus-9-pro-.jpg',
       isAvailable: true,
-      canReturn : 1
+      canReturn: 1
     },
     {
       id: 5,
@@ -102,7 +103,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/xiaomi-mi11.jpg',
       isAvailable: true,
-      canReturn : 0
+      canReturn: 0
     },
     {
       id: 6,
@@ -121,7 +122,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/sony-xperia-1-iii.jpg',
       isAvailable: true,
-      canReturn : 1
+      canReturn: 1
     },
     {
       id: 7,
@@ -140,7 +141,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/lg-velvet-.jpg',
       isAvailable: true,
-      canReturn : 0
+      canReturn: 0
     },
     {
       id: 8,
@@ -159,8 +160,8 @@ export class ProductsService {
       },
       imageUrl:
         'https://fdn2.gsmarena.com/vv/bigpic/motorola-edge-plus-2023.jpg',
-        isAvailable: true,
-      canReturn : 1
+      isAvailable: true,
+      canReturn: 1
     },
     {
       id: 9,
@@ -179,7 +180,7 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/huawei-p50-pro.jpg',
       isAvailable: true,
-      canReturn : 0
+      canReturn: 0
     },
     {
       id: 10,
@@ -198,21 +199,47 @@ export class ProductsService {
       },
       imageUrl: 'https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x5-pro.jpg',
       isAvailable: true,
-      canReturn : 1
+      canReturn: 1
     },
   ];
-   
+
 
   constructor() { }
 
 
-  getallProduct(){
+  getallProduct() {
     return this.mobiles
   }
 
-  getSelectedProd (id : number){
-    return this.mobiles.find( prod => prod.id === id)
+  getSelectedProd(id: number) {
+    return this.mobiles.find(prod => prod.id === id)
   }
 
 
+  updateProdInfo(updatedValues : iproduct){
+    this.mobiles.forEach( mob => {
+      if(updatedValues.id === mob.id ){
+        updatedValues.id = mob.id, // Include the id property
+        updatedValues.name = mob.name,
+        updatedValues.brand = mob.brand,
+        updatedValues.price = mob.price,
+
+        updatedValues.spec.camera = mob.spec.camera,
+        updatedValues.spec.frontCamera = mob.spec.frontCamera,
+        updatedValues.spec.backCamera = mob.spec.backCamera,
+        updatedValues.spec.processor = mob.spec.processor,
+        updatedValues.spec.battery = mob.spec.battery,
+        updatedValues.spec.display = mob.spec.display,
+        updatedValues.spec.ram = mob.spec.ram,
+        updatedValues.spec.rom = mob.spec.rom,
+
+        updatedValues.imageUrl = mob.imageUrl,
+        updatedValues.isAvailable = mob.isAvailable,
+        updatedValues.canReturn = mob.canReturn
+      }
+    })
+  }
+
+
+  
 }
