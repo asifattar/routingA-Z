@@ -3,6 +3,7 @@
         <ul class="list-group">
             <li
             [routerLink]="['/products', prod.id]"
+            [queryParams]="{canEdit : prod.canReturn}"
             [ngClass]="{ active : prod.id === selectedProd.id}"
             class="list-group-item" *ngFor="let prod of pData" >
                 {{prod.name}}

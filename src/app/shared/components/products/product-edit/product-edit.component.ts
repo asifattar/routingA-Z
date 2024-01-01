@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { iproduct } from 'src/app/shared/interface/iproduct';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
@@ -11,9 +11,9 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 export class ProductEditComponent implements OnInit {
 
   prodObj !: iproduct
-  canEdit: any;
+  canEdit : number =  1;
   prodID !: number
-  
+  canReturn !: number
   prodId: any;
 
 
@@ -24,6 +24,11 @@ export class ProductEditComponent implements OnInit {
     console.log(this.prodID);
     this.prodObj = this._productService.getSelectedProd(this.prodID)!
     console.log(this.prodObj);
+    this._route.queryParams
+      .subscribe((res : Params ) => {
+        console.log(res);
+        this.canEdit = +res['canEdit']
+      })
   }
 
 
