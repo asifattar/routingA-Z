@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { iusers } from 'src/app/shared/interface/iusers';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -13,8 +13,9 @@ export class UserComponent implements OnInit {
   seletedUserId !: number;
   selectedUser !: iusers; 
   
+  
 
-  constructor(private userservice : UsersService , private _route : ActivatedRoute) { }
+  constructor(private userservice : UsersService , private _route : ActivatedRoute ,private _router : Router) { }
 
   ngOnInit(): void {
     this.seletedUserId = +this._route.snapshot.params['id'];
@@ -22,6 +23,11 @@ export class UserComponent implements OnInit {
 
     console.log(this.selectedUser);
     
+  }
+
+
+  gotoEdit(){
+    this._router.navigate(['/users' , this.seletedUserId , 'edit'])
   }
 
 }

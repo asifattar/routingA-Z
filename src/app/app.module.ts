@@ -13,6 +13,7 @@ import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductComponent } from './shared/components/products/product/product.component';
 import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
 import { FormsModule } from '@angular/forms';
+import { EditUserComponent } from './shared/components/users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     UserComponent,
     ProductComponent,
     ProductEditComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

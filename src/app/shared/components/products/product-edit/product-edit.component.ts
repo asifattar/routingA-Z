@@ -11,13 +11,15 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 export class ProductEditComponent implements OnInit {
 
   prodObj !: iproduct
-  canEdit : number =  1;
+  canEdit: number = 1;
   prodID !: number
   canReturn !: number
   prodId: any;
 
 
-  constructor(private _router : Router ,private _route : ActivatedRoute , private _productService : ProductsService) { }
+  constructor(private _router: Router,
+    private _route: ActivatedRoute,
+    private _productService: ProductsService) { }
 
   ngOnInit(): void {
     this.prodID = +this._route.snapshot.params['id'];
@@ -25,7 +27,7 @@ export class ProductEditComponent implements OnInit {
     this.prodObj = this._productService.getSelectedProd(this.prodID)!
     console.log(this.prodObj);
     this._route.queryParams
-      .subscribe((res : Params ) => {
+      .subscribe((res: Params) => {
         console.log(res);
         this.canEdit = +res['canEdit']
       })
@@ -54,10 +56,10 @@ export class ProductEditComponent implements OnInit {
       canReturn: this.prodObj.canReturn,
     };
     console.log(updatedValues);
-    
+
     // You can now use `updatedValues` to send to your update service
     this._productService.updateProdInfo(updatedValues);
 
-    this._router.navigate(['/products',this.prodID]);
+    this._router.navigate(['/products', this.prodID]);
   }
 }

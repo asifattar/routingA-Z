@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { ProductComponent } from './shared/components/products/product/product.component';
 import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
+import { EditUserComponent } from './shared/components/users/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'users/:id', component: UserComponent
+  },
+  {
+    path: 'users/:id/edit', component: EditUserComponent
   },
   {
     path: '**', component: PageNotFoundComponent

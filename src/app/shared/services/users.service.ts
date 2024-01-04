@@ -6,6 +6,7 @@ import { iusers } from '../interface/iusers';
 })
 export class UsersService {
  
+ 
 
    usersArray : iusers[] = [
     {
@@ -99,5 +100,17 @@ export class UsersService {
 
   getSelectedUser(seletedUserId: number) {
     return this.usersArray.find(per => per.id === seletedUserId)
+  }
+
+  getediterdUser(updateduser : iusers) {
+     this.usersArray.forEach(user => {
+      if ( user.id === updateduser.id){
+        user.firstName = updateduser.firstName,
+        user.lastName = updateduser.lastName,
+        user.dateOfBirth = updateduser.dateOfBirth,
+        user.nativePlace = updateduser.nativePlace,
+        user.surname = updateduser.surname
+      }
+     })
   }
 }
