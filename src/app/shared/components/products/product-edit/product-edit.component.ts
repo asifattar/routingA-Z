@@ -11,7 +11,7 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 export class ProductEditComponent implements OnInit {
 
   prodObj !: iproduct
-  canEdit: number = 1;
+  canEdit  !: number 
   prodID !: number
   canReturn !: number
   prodId: any;
@@ -21,15 +21,17 @@ export class ProductEditComponent implements OnInit {
     private _route: ActivatedRoute,
     private _productService: ProductsService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.prodID = +this._route.snapshot.params['id'];
     console.log(this.prodID);
     this.prodObj = this._productService.getSelectedProd(this.prodID)!
     console.log(this.prodObj);
     this._route.queryParams
-      .subscribe((res: Params) => {
+      .subscribe((res : Params) => {
         console.log(res);
         this.canEdit = +res['canEdit']
+        console.log('canedit value ' ,this.canEdit);
+        
       })
   }
 

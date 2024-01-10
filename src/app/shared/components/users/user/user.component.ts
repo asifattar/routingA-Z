@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { iusers } from 'src/app/shared/interface/iusers';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -18,8 +18,12 @@ export class UserComponent implements OnInit {
   constructor(private userservice : UsersService , private _route : ActivatedRoute ,private _router : Router) { }
 
   ngOnInit(): void {
-    this.seletedUserId = +this._route.snapshot.params['id'];
-    this.selectedUser = this.userservice.getSelectedUser(this.seletedUserId)!
+    // this.seletedUserId = +this._route.snapshot.params['id'];
+    this._route.params
+    .subscribe((param : Params) => {
+      this.seletedUserId = +param['id']
+      this.selectedUser = this.userservice.getSelectedUser(this.seletedUserId)!
+    })
 
     console.log(this.selectedUser);
     

@@ -10,24 +10,16 @@ import { Router } from '@angular/router';
 })
 
 export class ProductsComponent implements OnInit {
-
-
-
-
   pData: Array<iproduct> = []
-
-
-  selectedProd !: iproduct
+  selectedProd !: number
 
   constructor(private _ProductsService: ProductsService,
-    private _router : Router) { }
+    private _router: Router) {
+  }
 
-
-    
   gotoUsers() {
     this._router.navigate(['/users'])
   }
-
 
   gotoDashborad() {
     this._router.navigate([''])
@@ -36,10 +28,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.pData = this._ProductsService.getallProduct()
     console.log(this.pData);
-
-    this.selectedProd = this.pData[0]
-
-
+    this.selectedProd = this.pData[0].id
   }
-
 }

@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   usersinfo : iusers[] = []
 
 
-  selectedPersone !: iusers ; 
+  selectedPersone !: number ; 
 
 
   constructor(private _usersservice : UsersService ,
@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.usersinfo = this._usersservice.getAllusers()
     console.log(this.usersinfo);
-    this.selectedPersone = this.usersinfo[0] 
+    this.selectedPersone = this.usersinfo[0].id
     console.log(this.selectedPersone);    
   }
 

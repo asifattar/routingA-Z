@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { iproduct } from 'src/app/shared/interface/iproduct';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
@@ -12,7 +12,8 @@ export class ProductComponent implements OnInit {
 
 
   prodObj !: iproduct ;
-  selectedProdId!: number;
+  selectedProdId!: number ;
+  btndisabled !: number ;
 
   constructor(
     private _productService : ProductsService ,
@@ -20,18 +21,20 @@ export class ProductComponent implements OnInit {
     private _router : Router) { }
 
   ngOnInit(): void {
-    this.selectedProdId = +this._route.snapshot.params['id'];
-    this.prodObj = this._productService.getSelectedProd(this.selectedProdId)!
+    // this.selectedProdId = +this._route.snapshot.params['id'];\
+    this._route.params
+    .subscribe((params : Params) => {
+      this.selectedProdId = +params['id']      
+      this.prodObj = this._productService.getSelectedProd(this.selectedProdId)!
+      this.btndisabled = this.prodObj.canReturn ;
+    })
+
     console.log(this.prodObj);
-    
-
-
   }
 
   canEdit() {
     this._router.navigate(['/products', this.selectedProdId , 'edit'],
     {queryParamsHandling : 'preserve'})
-    throw new Error('Method not implemented.');
   }
 
 

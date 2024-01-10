@@ -2,16 +2,18 @@
     <div class="col-md-4">
         <ul class="list-group">
             <li
+            (click)="selectedProd = prod.id"
             [routerLink]="['/products', prod.id]"
             [queryParams]="{canEdit : prod.canReturn}"
-            [ngClass]="{ active : prod.id === selectedProd.id}"
+            [ngClass]="{ active : prod.id === selectedProd}"
             class="list-group-item" *ngFor="let prod of pData" >
                 {{prod.name}}
             </li>
         </ul>
     </div>
     <div class="col-md-8">
-        <app-product></app-product>
+        <router-outlet></router-outlet>
+        <!-- <app-product></app-product> -->
     </div>
 </div>
 <div class="row">

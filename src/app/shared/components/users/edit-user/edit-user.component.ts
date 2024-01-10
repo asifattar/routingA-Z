@@ -23,10 +23,8 @@ export class EditUserComponent implements OnInit {
 
   onSubmite(){
     console.log(this.usersobj);
-    
     this._userservice.getediterdUser(this.usersobj) ; 
-     
-    this._router.navigate(['/users'])
+    this._router.navigate(['/users', this.userId])
   }
 
 }
