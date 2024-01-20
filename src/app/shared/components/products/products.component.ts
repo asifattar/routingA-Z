@@ -10,11 +10,18 @@ import { Router } from '@angular/router';
 })
 
 export class ProductsComponent implements OnInit {
+
   pData: Array<iproduct> = []
   selectedProd !: number
 
   constructor(private _ProductsService: ProductsService,
     private _router: Router) {
+  }
+
+  ngOnInit(): void {
+    this.pData = this._ProductsService.getallProduct()
+    console.log(this.pData);
+    this.selectedProd = this.pData[0].id
   }
 
   gotoUsers() {
@@ -25,9 +32,5 @@ export class ProductsComponent implements OnInit {
     this._router.navigate([''])
   }
 
-  ngOnInit(): void {
-    this.pData = this._ProductsService.getallProduct()
-    console.log(this.pData);
-    this.selectedProd = this.pData[0].id
-  }
+ 
 }

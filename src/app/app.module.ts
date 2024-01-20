@@ -14,6 +14,7 @@ import { ProductComponent } from './shared/components/products/product/product.c
 import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
 import { FormsModule } from '@angular/forms';
 import { EditUserComponent } from './shared/components/users/edit-user/edit-user.component';
+import { ProdFormComponent } from './shared/components/products/prod-form/prod-form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EditUserComponent } from './shared/components/users/edit-user/edit-user
     ProductComponent,
     ProductEditComponent,
     EditUserComponent,
+    ProdFormComponent,
   ],
   imports: [
     BrowserModule,

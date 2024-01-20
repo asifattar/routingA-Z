@@ -1,0 +1,101 @@
+<!-- prod-form.component.html -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name">Product Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.brand">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" [(ngModel)]="prodObj.price">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="camera">Camera</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.camera">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="frontCamera">Front Camera</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.frontCamera">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="processor">Processor</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.processor">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="battery">Battery</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.battery">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="display">Display</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.display">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ram">RAM</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.ram">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="rom">ROM</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.spec.rom">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="backCamera">Back Camera</label>
+                        <input type="number" class="form-control" [(ngModel)]="prodObj.spec.backCamera">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL</label>
+                        <input type="text" class="form-control" [(ngModel)]="prodObj.imageUrl">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="isAvailable">Product Status</label>
+                        <select class="form-control" [(ngModel)]="prodObj.isAvailable">
+                            <option [value]="true">In Stock</option>
+                            <option [value]="false">Out Of Stock</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="canReturn">Can Return</label>
+                        <input type="number" class="form-control" [(ngModel)]="prodObj.canReturn">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 p-0">
+                <div class="form-group text-right">
+                    <button type="button" class="btn btn-success" (click)="onadd()">Add PRODUCT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

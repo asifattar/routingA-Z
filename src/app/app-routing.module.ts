@@ -8,6 +8,7 @@ import { ProductComponent } from './shared/components/products/product/product.c
 import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
 import { EditUserComponent } from './shared/components/users/edit-user/edit-user.component';
+import { ProdFormComponent } from './shared/components/products/prod-form/prod-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,9 +19,10 @@ const routes: Routes = [
     path: 'products', component: ProductsComponent,
     children: [
       { path: ':id', component: ProductComponent },
-      { path: ':id/edit', component: ProductEditComponent }
+      { path: ':id/edit', component: ProductEditComponent },
     ]
   },
+  {path : 'addProd' , component : ProdFormComponent},
   // {
   //   path: 'products/:id', component: ProductComponent
   // },
@@ -31,7 +33,7 @@ const routes: Routes = [
     path: 'users', component: UsersComponent ,
     children : [
       {path : ":id" , component : UserComponent},
-      {path : ':id/edit' , component : EditUserComponent}
+      {path : ':id/edit' , component : EditUserComponent},
     ]
   },
   // {
