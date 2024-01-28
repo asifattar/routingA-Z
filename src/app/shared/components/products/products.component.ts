@@ -30,7 +30,5 @@ export class ProductsComponent implements OnInit {
 
   gotoDashborad() {
     this._router.navigate([''])
-  }
-
- 
+  } 
 }

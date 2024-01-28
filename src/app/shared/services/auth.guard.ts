@@ -1,19 +1,30 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor() { }
+  constructor(private _authService: AuthService , private _router : Router) { }
 
 
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return true;
+    _route: ActivatedRouteSnapshot,
+    _state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
+      // return true
+    return this._authService.isAuthenticated()
+      .then(( isAuth : boolean) => {
+        if( isAuth === true){
+          return true
+        }else{
+          this._router.navigate(["/"])
+          return false
+        }
+      })
   }
 
 }

@@ -5,6 +5,7 @@
             (click)="selectedPersone = per.id"
             [routerLink]="['/users', per.id ]"
             [ngClass]="{active : per.id === selectedPersone}"
+            [queryParams]="{userRole : per.userRole}"
             *ngFor="let per of usersinfo">
                 {{per.firstName}} {{per.lastName}}
             </li>

@@ -9,6 +9,7 @@ import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductEditComponent } from './shared/components/products/product-edit/product-edit.component';
 import { EditUserComponent } from './shared/components/users/edit-user/edit-user.component';
 import { ProdFormComponent } from './shared/components/products/prod-form/prod-form.component';
+import { AuthGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +17,7 @@ const routes: Routes = [
     path: 'home', component: DashbordComponent
   },
   {
-    path: 'products', component: ProductsComponent,
+    path: 'products', component: ProductsComponent, canActivate : [AuthGuard] ,
     children: [
       { path: ':id', component: ProductComponent },
       { path: ':id/edit', component: ProductEditComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
   //   path: 'products/:id/edit', component: ProductEditComponent
   // },
   {
-    path: 'users', component: UsersComponent ,
+    path: 'users', component: UsersComponent , canActivate : [AuthGuard] ,
     children : [
       {path : ":id" , component : UserComponent},
       {path : ':id/edit' , component : EditUserComponent},

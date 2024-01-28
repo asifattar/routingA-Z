@@ -14,6 +14,7 @@ export class UsersService {
       lastName: "Doe",
       surname: "Smith",
       dateOfBirth: "1990-05-15",
+      userRole : "admin",
       nativePlace: "New York ",
       id : 1
     },
@@ -22,6 +23,7 @@ export class UsersService {
       lastName: "Johnson",
       surname: "Brown",
       dateOfBirth: "1988-09-23",
+      userRole : "customer",
       nativePlace: "Los Angeles",
       id : 2},
 
@@ -30,6 +32,7 @@ export class UsersService {
       lastName: "Williams",
       surname: "Jones",
       dateOfBirth: "1995-12-07",
+      userRole : "admin",
       nativePlace: "Chicago",
       id : 3},
 
@@ -38,6 +41,7 @@ export class UsersService {
       lastName: "Davis",
       surname: "Wilson",
       dateOfBirth: "1992-03-30",
+      userRole : "customer",
       nativePlace: "Houston" ,
       id : 4},
 
@@ -46,6 +50,7 @@ export class UsersService {
       lastName: "Anderson",
       surname: "Martinez",
       dateOfBirth: "1985-11-10",
+      userRole : "admin",
       nativePlace: "Miami",
       id : 5},
 
@@ -54,6 +59,7 @@ export class UsersService {
       lastName: "Garcia",
       surname: "Thompson",
       dateOfBirth: "1998-07-18",
+      userRole : "customer",
       nativePlace: "San Francisco",
       id : 6},
 
@@ -62,6 +68,7 @@ export class UsersService {
       lastName: "Hernandez",
       surname: "Lee",
       dateOfBirth: "1993-01-25",
+      userRole : "admin",
       nativePlace: "Seattle",
       id : 10},
 
@@ -70,6 +77,7 @@ export class UsersService {
       lastName: "Miller",
       surname: "Walker",
       dateOfBirth: "1997-06-08",
+      userRole : "customer",
       nativePlace: "Boston",
       id : 7},
 
@@ -78,6 +86,7 @@ export class UsersService {
       lastName: "Gonzalez",
       surname: "Clark",
       dateOfBirth: "1987-04-12",
+      userRole : "admin",
       nativePlace: "Dallas",
       id : 8},
 
@@ -86,6 +95,7 @@ export class UsersService {
       lastName: "Rodriguez",
       surname: "Adams",
       dateOfBirth: "1991-08-05",
+      userRole : "customer",
       nativePlace: "Phoenix",
       id :9}
 

@@ -31,7 +31,14 @@ export class UserComponent implements OnInit {
 
 
   gotoEdit(){
-    this._router.navigate(['/users' , this.seletedUserId , 'edit'])
+
+
+    this._router.navigate(['/users' , this.seletedUserId , 'edit' ],{
+      queryParamsHandling : 'preserve'
+    })
+
+
+
   }
 
 }
