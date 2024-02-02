@@ -25,7 +25,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SignupComponent } from './shared/components/signup/signup.component';
 import { AngularFireModule } from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
+
+
 
 
 
@@ -61,7 +64,7 @@ import { environment } from 'src/environments/environment';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
