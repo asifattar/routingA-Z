@@ -38,7 +38,18 @@ const routes: Routes = [
       { path: ':id/edit', component: EditUserComponent },
     ]
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'page-not-found',
+    component : PageNotFoundComponent , 
+    data : {
+      msg: 'There is no information about this!!!'
+    }
+  },
+  {
+    path: '**',
+    redirectTo : 'page-not-found',
+  }
+  
 ];
 
 @NgModule({
