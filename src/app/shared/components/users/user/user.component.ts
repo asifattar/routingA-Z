@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
 
   seletedUserId !: number;
   selectedUser !: iusers; 
+  canEdite !: string;
   
   
 
@@ -25,14 +26,15 @@ export class UserComponent implements OnInit {
       this.selectedUser = this.userservice.getSelectedUser(this.seletedUserId)!
     })
 
+
+    this.canEdite = this.selectedUser.userRole
     console.log(this.selectedUser);
     
   }
 
 
   gotoEdit(){
-
-
+    
     this._router.navigate(['/users' , this.seletedUserId , 'edit' ],{
       queryParamsHandling : 'preserve'
     })

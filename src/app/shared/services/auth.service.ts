@@ -44,6 +44,10 @@ export class AuthService {
 
   }
 
+
+  
+
+
   // create account 
 
   register(email: string, password: string) {
